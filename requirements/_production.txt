@@ -1,0 +1,10 @@
+gunicorn==19.0.0
+
+# TODO: once dj-static has been updated past 0.0.5 on PyPI, install from
+#       there, not github:
+#       - https://github.com/kennethreitz/dj-static/issues/30
+#       - https://pypi.python.org/pypi/dj-static
+#
+# dj-static==0.0.6  # allows serving static files through Gunicorn
+
+-e git+https://github.com/kennethreitz/dj-static@b02979384d7c7a6944375c5959224bff40c2035a#egg=dj-static

@@ -1,0 +1,18 @@
+[
+{
+    "fields": {
+        "slug": "liverpool",
+        "name": "Liverpool"
+    },
+    "model": "locations.location",
+    "pk": 1
+},
+{
+    "fields": {
+        "slug": "southampton",
+        "name": "Southampton"
+    },
+    "model": "locations.location",
+    "pk": 2
+}
+]

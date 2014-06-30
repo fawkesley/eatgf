@@ -1,0 +1,6 @@
+<h1>Gluten-free restaurants in {{ location.name }}</h1>
+<ul>
+  {% for restaurant in object_list %}
+  <li><a href="{% url "restaurant-detail" location.slug restaurant.slug %}">{{ restaurant.name }}</a></li>
+  {% endfor %}
+</ul>

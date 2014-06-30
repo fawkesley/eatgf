@@ -1,0 +1,26 @@
+language: python
+python:
+  - 2.7
+  - 3.2
+addons:
+  postgresql: "9.3"
+env:
+  matrix:
+    - DJANGO_SETTINGS_MODULE=eatgf.settings.production DATABASE_URL=postgres://postgres:@localhost:5432/eatgf SECRET_KEY=abc
+  global:
+    # Contains GH_TOKEN=<secret token> for release tagging
+    secure: "d56JXdlDxjZws8+dvvZ/RV/m7wr8+CdFPOabRFWzzo2sV7CsBjlc7vuCT1OAWbGMmt0Q9jQvjt3axHxI5/fbmEetBy4vlnIq5apPCrpNMZRo+iMt+GlMxmueq+RdrTyClH/T/790E6egsIoP6HUHHf6tlAhiNRKm7PUhQoNUbx4="
+matrix:
+  fast_finish: true
+  allow_failures:
+    - python: 3.2
+install:
+  -  pip install -r requirements_for_travis.txt
+before_script:
+  - psql -c 'create database eatgf;' -U postgres
+after_success:
+  - ./.travis_scripts/push_release_tag.sh
+script:
+  - ./run_tests.sh
+notifications:
+  email: false
