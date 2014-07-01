@@ -1,6 +1,15 @@
-<h1>Gluten-free restaurants in {{ location.name }}</h1>
-<ul>
+{% extends "base.html" %}
+
+{% block title %}Gluten-free restaurant reviews in {{ location.name }} | eatglutenfree{% endblock %}
+
+{% block main_container %}
+<div class="page-header">
+    <h1>Gluten-free restaurants in {{ location.name }}</h1>
+</div>
+
   {% for restaurant in object_list %}
-  <li><a href="{% url "restaurant-detail" location.slug restaurant.slug %}">{{ restaurant.name }}</a></li>
+  <h2><a href="{% url "restaurant-detail" location.slug restaurant.slug %}">
+      {{ restaurant.name }}
+  </a></h2>
   {% endfor %}
-</ul>
+{% endblock %}

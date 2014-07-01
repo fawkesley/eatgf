@@ -1,1 +1,11 @@
-<h1>{{ object.name }}</h1>
+{% extends "base.html" %}
+
+{% block title %}{{ object.name }} restaurant in {{ object.location.name }} | eatglutenfree{% endblock %}
+
+{% block main_container %}
+
+<div class="page-header">
+  <h1>{{ object.name }}</h1>
+</div>
+
+{% endblock %}
