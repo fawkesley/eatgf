@@ -7,7 +7,7 @@ variables through the herkou command line, for example:
 
 ```
 export APP_NAME="eatgf-staging"
-export DOMAIN="reviews-staging.eatgf.org"
+export DOMAIN="www-staging.eatgf.org"
 
 # DJANGO_SETTINGS_MODULE
 heroku config:set DJANGO_SETTINGS_MODULE=eatgf.settings.production --app ${APP_NAME}
