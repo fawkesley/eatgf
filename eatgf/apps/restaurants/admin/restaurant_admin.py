@@ -4,4 +4,4 @@ from eatgf.apps.restaurants.models import Restaurant
 
 @admin.register(Restaurant)
 class RestaurantAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'location', 'slug', 'website')

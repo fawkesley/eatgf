@@ -9,6 +9,13 @@
     {% if object.website %}
     <h2><a href="{{ object.website }}">{{ object.website }}</a></h2>
     {% endif %}
+
+    {% for comment in comments %}
+    <blockquote>
+        <p>{{ comment.text }}</p>
+        <footer>{{ comment.author.first_name }}</footer>
+        </blockquote>
+    {% endfor %}
 </div>
 
 {% endblock %}

@@ -9,3 +9,8 @@ class RestaurantDetail(DetailView):
     def get_queryset(self):
         return Restaurant.objects.filter(
             location__slug=self.kwargs['location'])
+
+    def get_context_data(self, **kwargs):
+        context = super(RestaurantDetail, self).get_context_data(**kwargs)
+        context['comments'] = self.object.comments.all()
+        return context
