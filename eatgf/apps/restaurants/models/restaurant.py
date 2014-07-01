@@ -25,5 +25,9 @@ class Restaurant(models.Model):
         related_name='restaurants',
         on_delete=models.PROTECT)
 
+    website = models.URLField(
+        blank=True,
+        default='')
+
     def __str__(self):
         return self.name
