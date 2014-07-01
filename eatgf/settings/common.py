@@ -33,8 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 DEBUG = TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = [
-    'reviews.eatgf.org',
-    'reviews-staging.eatgf.org',
+    'www.eatgf.org',
+    'www-staging.eatgf.org',
     'eatgf.herokuapp.com',
     'eatgf-staging.herokuapp.com',
 ]
