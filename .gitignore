@@ -3,3 +3,4 @@
 
 eatgf/db.sqlite3
 eatgf/static_collected/*
+eatgf/log/*.log

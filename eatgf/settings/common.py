@@ -127,3 +127,24 @@ STATICFILES_DIRS = [
 TEMPLATE_DIRS = [
     pjoin(BASE_DIR, 'template'),
 ]
+
+# Logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': pjoin(BASE_DIR, 'log', 'django.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
