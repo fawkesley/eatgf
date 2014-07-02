@@ -3,8 +3,20 @@
 {% block title %}Gluten-free restaurant reviews in {{ location.name }} | eatglutenfree{% endblock %}
 
 {% block main_container %}
+<div class="jumbotron">
+    <h1>gluten-friendly restaurants in {{ location.name|lower }}</h1>
+</div>
+
 <div class="page-header">
-    <h1>Gluten-free restaurants in {{ location.name }}</h1>
+    <h1>
+    These restaurants understand and can accommodate gluten-free needs.
+    </h1>
+
+    <p class="lead">
+    Have you eaten somewhere not listed?
+    <a href="/#contact">Tell us about it.</a>
+    </p>
+
 </div>
 
   {% for restaurant in object_list %}

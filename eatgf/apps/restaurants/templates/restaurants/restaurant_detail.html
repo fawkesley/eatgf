@@ -9,13 +9,30 @@
     {% if object.website %}
     <h2><a href="{{ object.website }}">{{ object.website }}</a></h2>
     {% endif %}
+</div>
 
+<div class="page-header">
+{% if not comments %}
+    <h2><i>No-one's said anything recently about {{ object.name }}</i></h2>
+{% else %}
+    <h2>What people are saying about {{ object.name }}:</i></h2>
+{% endif %}
+</div>
+
+<div>
     {% for comment in comments %}
     <blockquote>
         <p>{{ comment.text }}</p>
         <footer>{{ comment.author.first_name }}</footer>
         </blockquote>
     {% endfor %}
+
+    <p class="lead">
+    Have you been here?
+    <a href="/#contact">Share with others, get in touch now.</a>
+    </p>
+
+
 </div>
 
 {% endblock %}
