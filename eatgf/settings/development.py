@@ -6,6 +6,8 @@ if SECRET_KEY is None:
 if 'true' == os.environ.get('DEBUG', 'true'):  # default on but allow disabling
     DEBUG = TEMPLATE_DEBUG = True  # SECURITY WARNING: insecure! leaks secrets.
 
+DISABLE_GOOGLE_ANALYTICS = True
+
 if DATABASES is None:
     print("Using SQLite database.")
     DATABASES = {
