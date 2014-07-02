@@ -2,21 +2,8 @@
 
 {% block main_container %}
 
-<div class="jumbotron">
-    <h1>eat gluten free</h1>
-
-    <p class="lead">
-    Helping you find gluten-free and gluten-aware restaurants
-    across the UK.
-    </p>
-
-    <p>
-    Reviews, rating and recommendations from the gluten-free community.
-    </p>
-</div>
-
 <div>
-    <div class="page-header">
+    <div class="jumbotron">
         <h1>UK locations</h1>
     </div>
     {% for location in object_list %}
@@ -24,70 +11,6 @@
         <a href="{% url 'location-detail' location.slug %}">{{ location.name }}</a>
     </h2>
     {% endfor %}
-</div>
-
-<div id="about">
-    <div class="page-header">
-        <h1>About</h1>
-        <p class="lead">
-        Eating out can be difficult for coeliacs and people with wheat or
-        gluten intolerance.
-        </p>
-
-        <p class="lead">
-        We are promoting <b>gluten friendly</b> restaurants - those who
-        understand our needs and can accommodate us. Can you share your
-        experiences of restaurants near you?
-        </p>
-
-        <p class="lead">
-        <ul>
-            <li>Were they able to provide a gluten-free menu?</li>
-            <li>Were the staff clued up on what gluten-free means?</li>
-            <li>Did they have a good selection of choices?</li>
-        </ul>
-        </p>
-
-        <p class="lead"><a href="#contact">Contact me with your recommendations</a></p>
-
-
-    </div>
-</div>
-
-<div id="for-restaurants">
-    <div class="page-header">
-        <h1>For Restaurants</h1>
-        <p class="lead">
-        It's essential that you that gluten-free requests are taken seriously
-        and answered accurately, as many coeliacs can become extremely ill from
-        small exposure. Others are less sensitive; good information is key.
-        </p>
-
-        <p class="lead">
-        <a href="http://www.coeliac.org.uk">Coeliac UK</a> produce many good resources:
-        <ul>
-            <li><a href="https://www.coeliac.org.uk/food-industry-professionals/">Food Industry Professionals</a></li>
-            <li><a href="https://www.coeliac.org.uk/food-industry-professionals/gluten-free-and-the-law/">Gluten-free and the law</a></li>
-        </ul>
-        </p>
-    </div>
-</div>
-
-<div id="contact">
-    <div class="page-header">
-        <h1>Contact</h1>
-        <p class="lead">
-        Please send any restaurant reviews, recommendations, general feedback
-        or ideas my way.
-        <address>
-            <abbr title="Email">Email:</abbr>
-            <a href="mailto:eatgf@paulfurley.com">eatgf@paulfurley.com</a>
-        </address>
-        </p>
-        <p>
-        I do this in my spare time, so please forgive me if I'm slow to reply.
-        </p>
-    </div>
 </div>
 
 {% endblock %}

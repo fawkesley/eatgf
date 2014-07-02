@@ -1,0 +1,23 @@
+html {
+  background: url(../img/liverpool-gluten-free-restaurants.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+body {
+    background-color: transparent;
+    min-height: 100%;
+}
+
+div.main-container {
+   background-color: rgba(245, 245, 245, 0.8);
+   min-height: 100%;
+ }
+
+.navbar {
+   margin-bottom: 0;
+}
+
