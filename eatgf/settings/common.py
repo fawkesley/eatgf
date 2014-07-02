@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
 ]
 
 TEMPLATE_DIRS = [
-    pjoin(BASE_DIR, 'template'),
+    pjoin(BASE_DIR, 'templates'),
 ]
 
 # Logging
