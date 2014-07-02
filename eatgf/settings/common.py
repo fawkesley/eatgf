@@ -21,6 +21,7 @@ import sys
 from os.path import abspath, dirname, join as pjoin
 from urlparse import urlparse
 
+from django.conf import global_settings
 
 BASE_DIR = abspath(pjoin(dirname(__file__), '..'))
 
@@ -31,6 +32,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = TEMPLATE_DEBUG = False
+
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-52488541-1'
+DISABLE_GOOGLE_ANALYTICS = os.environ.get(
+    'DISABLE_GOOGLE_ANALYTICS', 'false') == 'true'
+
 
 ALLOWED_HOSTS = [
     'www.eatgf.org',
@@ -50,6 +56,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'eatgf.libs.google_analytics',
+
     'eatgf.apps.restaurants',
     'eatgf.apps.locations',
 )
@@ -62,6 +70,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    ('eatgf.libs.google_analytics.context_processor',)
 )
 
 ROOT_URLCONF = 'eatgf.urls'

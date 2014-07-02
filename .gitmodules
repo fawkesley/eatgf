@@ -1,0 +1,3 @@
+[submodule "eatgf/libs/google_analytics"]
+	path = eatgf/libs/google_analytics
+	url = https://github.com/paulfurley/django-google-analytics
