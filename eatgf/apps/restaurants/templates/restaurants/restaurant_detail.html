@@ -29,7 +29,7 @@
 <div>
     {% for review in reviews %}
     <blockquote>
-        <p>{{ review.text }}</p>
+        <p>{{ review.text|linebreaks }}</p>
         <footer>{{ review.author.first_name }}</footer>
         </blockquote>
     {% endfor %}
