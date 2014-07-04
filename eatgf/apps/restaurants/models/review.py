@@ -10,7 +10,7 @@ from .restaurant import Restaurant
 
 
 @python_2_unicode_compatible
-class Comment(models.Model):
+class Review(models.Model):
     class Meta:
         app_label = 'restaurants'
 
@@ -20,7 +20,7 @@ class Comment(models.Model):
 
     restaurant = models.ForeignKey(
         Restaurant,
-        related_name='comments',
+        related_name='reviews',
         on_delete=models.PROTECT)
 
     author = models.ForeignKey(User)
@@ -29,7 +29,7 @@ class Comment(models.Model):
         ''' On save, update timestamps '''
         if not self.id:
             self.created = now()
-        return super(Comment, self).save(*args, **kwargs)
+        return super(Review, self).save(*args, **kwargs)
 
     def __str__(self):
         if len(self.text) > 20:
