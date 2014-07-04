@@ -1,21 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}{{ object.name }} restaurant in {{ object.location.name }} | eatglutenfree{% endblock %}
+{% block title %}{{ object.name }} gluten-friendly restaurant in {{ object.location.name }} | eatglutenfree{% endblock %}
 
 {% block main_container %}
+<ul class="breadcrumb">
+    <li><a href="{% url 'location-detail' object.location.slug %}">{{ object.location.name }}</a></li>
+    <li class="active">Gluten-Friendly Restaurants</li>
+</ul>
 
 <div class="page-header">
     <h1>{{ object.name }}</h1>
     {% if object.website %}
     <h2><a href="{{ object.website }}">{{ object.website }}</a></h2>
     {% endif %}
+    <p class="lead">
+    <em>{{ object.name }} understand and accommodate gluten-free needs.</em>
+    </p>
 </div>
 
 <div class="page-header">
 {% if not comments %}
-    <h2><i>No-one's said anything recently about {{ object.name }}</i></h2>
+    <h2><i>Be the first to review {{ object.name }}</i></h2>
 {% else %}
-    <h2>What people are saying about {{ object.name }}:</i></h2>
+    <h2>Latest reviews</i></h2>
 {% endif %}
 </div>
 
@@ -29,7 +36,7 @@
 
     <p class="lead">
     Have you been here?
-    <a href="/#contact">Share with others, get in touch now.</a>
+    <a href="/#contact">Send me a review.</a>
     </p>
 
 
