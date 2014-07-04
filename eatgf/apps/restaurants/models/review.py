@@ -16,7 +16,7 @@ class Review(models.Model):
 
     created = models.DateTimeField(editable=False)
 
-    text = models.CharField(max_length=200, blank=False)
+    text = models.TextField(blank=False)
 
     restaurant = models.ForeignKey(
         Restaurant,
@@ -32,7 +32,7 @@ class Review(models.Model):
         return super(Review, self).save(*args, **kwargs)
 
     def __str__(self):
-        if len(self.text) > 20:
-            return self.text[0:17] + '...'
+        if len(self.text) > 30:
+            return self.text[0:27] + '...'
         else:
             return self.text
