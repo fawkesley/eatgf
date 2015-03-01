@@ -1,4 +1,4 @@
 https://www.djangoproject.com/download/1.7c1/tarball/
-psycopg2==2.5.4
+psycopg2==2.6
 python-batcher==0.0.2
 django-docopt-command==0.2.0
