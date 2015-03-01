@@ -1,4 +1,4 @@
-gunicorn==19.2.0
+gunicorn==19.2.1
 
 # TODO: once dj-static has been updated past 0.0.5 on PyPI, install from
 #       there, not github:
